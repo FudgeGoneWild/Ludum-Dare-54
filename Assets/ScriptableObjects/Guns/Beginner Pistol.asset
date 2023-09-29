@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1cbb9e852ee1ec4da3a79f3c04c6905, type: 3}
+  m_Name: Beginner Pistol
+  m_EditorClassIdentifier: 
+  gunName: Weakling
+  MaxAmmo: 20
+  fireRate: 0.5
+  knockBack: 0
+  bulletSpeed: 30
+  firePointPOS: {x: 1, y: 0, z: 0}
+  gunSprite: {fileID: 0}
+  layerIndex: 0
+  layerWeight: 0
+  bulletPrefab: {fileID: 3819918032838243393, guid: e807f977cc242e84cbeaf2e7789495cb, type: 3}
