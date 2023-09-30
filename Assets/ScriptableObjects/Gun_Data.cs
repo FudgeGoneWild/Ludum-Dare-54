@@ -11,6 +11,7 @@ public class Gun_Data : ScriptableObject
     [SerializeField] public float fireRate;
     [SerializeField] public float knockBack;
     [SerializeField] public float bulletSpeed;
+    [SerializeField] public float gunSpray;
     [SerializeField] public Vector3 firePointPOS;
 
     [Header("Animations")]

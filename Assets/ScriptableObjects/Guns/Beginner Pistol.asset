@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Beginner Pistol
   m_EditorClassIdentifier: 
   gunName: Weakling
-  MaxAmmo: 20
-  fireRate: 0.5
-  knockBack: 0
-  bulletSpeed: 30
-  firePointPOS: {x: 1, y: 0, z: 0}
+  MaxAmmo: 45
+  fireRate: 0.3
+  knockBack: 1
+  bulletSpeed: 20
+  gunSpray: 0.05
+  firePointPOS: {x: 0.5, y: 0, z: 0}
+  armsWithGun: {fileID: 0}
   gunSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  layerIndex: 0
-  layerWeight: 0
   bulletPrefab: {fileID: 3819918032838243393, guid: e807f977cc242e84cbeaf2e7789495cb, type: 3}
