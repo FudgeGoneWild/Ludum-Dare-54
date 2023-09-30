@@ -15,7 +15,7 @@ public class PlayerMovement_Controller : MonoBehaviour
     [SerializeField] private float decelaration;
     [SerializeField] private float freezeFrameTimer;
     private Rigidbody2D body;
-
+    private TrailRenderer lineRenderer;
     private Vector2 axisMovement;
     private bool canDash = true;
     private bool dashReady = true;
@@ -24,6 +24,7 @@ public class PlayerMovement_Controller : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        lineRenderer = GetComponent<TrailRenderer>();    
     }
 
     // Update is called once per frame
@@ -57,7 +58,9 @@ public class PlayerMovement_Controller : MonoBehaviour
     private void Dash()
     {
         StartCoroutine(nameof(DashCoolDown));
+        StartCoroutine(nameof(SetDashReady));
         body.AddForce(axisMovement.normalized * dashStrengh, ForceMode2D.Impulse);
+        lineRenderer.enabled = true;
     }
 
     IEnumerator SetDashReady()
@@ -72,6 +75,7 @@ public class PlayerMovement_Controller : MonoBehaviour
         canDash = false;
         yield return new WaitForSecondsRealtime(dashCooldown);
         body.velocity = Vector2.zero;
+        lineRenderer.enabled = false;
         canDash = true;
     }
 

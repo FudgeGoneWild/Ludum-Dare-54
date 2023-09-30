@@ -16,6 +16,9 @@ public class Player_Shooting_Controller : MonoBehaviour
     [SerializeField] float fireRate;
     [SerializeField] float knockBack;
 
+    [Header("PickUpRadius")]
+    [SerializeField] float pickup_R;
+
     bool canFire = true;
 
     Rigidbody2D rb;
@@ -72,6 +75,12 @@ public class Player_Shooting_Controller : MonoBehaviour
         bulletSpeed = gun_Data.bulletSpeed;
         fireRate = gun_Data.fireRate;
         knockBack = gun_Data.knockBack;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, pickup_R);
     }
 
 }

@@ -14,9 +14,8 @@ public class Gun_Data : ScriptableObject
     [SerializeField] public Vector3 firePointPOS;
 
     [Header("Animations")]
+    [SerializeField] public Sprite armsWithGun;
     [SerializeField] public Sprite gunSprite;
-    [SerializeField] public int layerIndex;
-    [SerializeField] public int layerWeight;
 
     [Header("Prefabs")]
     [SerializeField] public GameObject bulletPrefab;
