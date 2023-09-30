@@ -10,12 +10,14 @@ public class Player_Shooting_Controller : MonoBehaviour
     [SerializeField] GameObject firePoint;
     [SerializeField] GameObject bullet;
     [SerializeField] int maxAmmo;
+    [SerializeField] public int maxAmmoBoost = 1; // max ammo upgrade
     [SerializeField] int currAmmo;
     [SerializeField] float bulletSpeed;
-    [SerializeField] float fireRate;
+    [SerializeField] public float fireRate;
     [SerializeField] float knockBack;
-    [SerializeField] float spray;
-
+    [SerializeField] public float sprayBoost = 0.2f; //spray upgrade
+    [SerializeField] public float spray;
+    [SerializeField] public float FireRateBoost = 1; // fire rate upgrade
     [SerializeField] bool isShotgun;
     [SerializeField] int amountofShots;
 
@@ -150,11 +152,11 @@ public class Player_Shooting_Controller : MonoBehaviour
         firePoint.transform.localPosition = currGun.firePointPOS;
         bullet = currGun.bulletPrefab;
         maxAmmo = currGun.MaxAmmo;
-        currAmmo = maxAmmo;
+        currAmmo = maxAmmo + maxAmmoBoost;
         bulletSpeed = currGun.bulletSpeed;
-        fireRate = currGun.fireRate;
+        fireRate = currGun.fireRate + FireRateBoost;
         knockBack = currGun.knockBack;
-        spray = currGun.gunSpray;
+        spray = currGun.gunSpray - sprayBoost;
         isShotgun = currGun.shotgun;
         ShakeName = currGun.shakeString;
 

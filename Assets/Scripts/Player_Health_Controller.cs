@@ -7,6 +7,7 @@ public class Player_Health_Controller : MonoBehaviour
     [Header("Player Health Properties")]
     [SerializeField] private int Maxhealth = 5;
     [SerializeField] private int currHealth = 5;
+    [SerializeField] public int healthBoost = 0; //upgrade health
 
     [SerializeField] Color32 flashColor;
     [SerializeField] bool invincible;
@@ -76,6 +77,11 @@ public class Player_Health_Controller : MonoBehaviour
         gunspriteRenderer.color = Color.white;
         spriteRenderer.color = Color.white;
         invincible = false;
+    }
+
+    public void UpdateMaxHealth()
+    {
+        Maxhealth += healthBoost;
     }
 
     public void HealthPickup(int healthboost)

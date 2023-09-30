@@ -15,7 +15,7 @@ MonoBehaviour:
   gunName: Uzi
   MaxAmmo: 145
   fireRate: 0.05
-  knockBack: 1
+  knockBack: 0.2
   bulletSpeed: 35
   gunSpray: 3
   firePointPOS: {x: 1.176, y: -0.263, z: 0}

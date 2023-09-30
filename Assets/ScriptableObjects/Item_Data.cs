@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Item_Data", menuName = "Item Data", order = 1)]
 public class Item_Data : ScriptableObject
 {
-    [SerializeField] string ItemName;
-    [SerializeField] float boostAmount;
-    [SerializeField] Sprite itemSprite;
+    [SerializeField] public string ItemName;
+    [SerializeField] public Sprite itemSprite;
+    [SerializeField] public string ItemBoost;
+    [SerializeField] public float amount;
 }

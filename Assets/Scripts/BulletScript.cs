@@ -6,13 +6,14 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     [SerializeField] public int damage;
+    [SerializeField] public int damageBoost = 0; //damage upgrade
     [SerializeField] public float knockBack;
 
     [SerializeField] private ParticleSystem bulletSparks;
     // Start is called before the first frame update
     void Start()
     {
-        
+        damage += damageBoost;
     }
 
 

@@ -6,14 +6,14 @@ using UnityEngine;
 public class PlayerMovement_Controller : MonoBehaviour
 {
     [Header("Movement Properties")]
-    [SerializeField] private float speed = 10f;
+    [SerializeField] public float speed = 10f;
+    [SerializeField] public float speedboost = 0;
     [SerializeField] private float dashStrengh;
+    [SerializeField] public float dashStrenghBoost = 0;
     [SerializeField] private float dashCooldown = 0.2f;
-    [SerializeField] private float setDashReady = 2;
+    [SerializeField] public float setDashReady = 2;
+    [SerializeField] public float dashCooldownBoost = 0;
 
-    [SerializeField] private float accelaration;
-    [SerializeField] private float decelaration;
-    [SerializeField] private float freezeFrameTimer;
     private Rigidbody2D body;
     private TrailRenderer lineRenderer;
     private Vector2 axisMovement;
@@ -54,9 +54,22 @@ public class PlayerMovement_Controller : MonoBehaviour
        if (canDash)
         {
             //body.velocity = axisMovement * speed;
-            body.AddForce(axisMovement * speed, ForceMode2D.Force);
+            body.AddForce(axisMovement * (speed + speedboost) , ForceMode2D.Force);
             body.velocity = new Vector2(Mathf.Clamp(body.velocity.x, -speed, speed),Mathf.Clamp(body.velocity.y, -speed, speed));
         }
+    }
+
+    public void UpgradeDashCooldown()
+    {
+        if (dashCooldown < 0)
+        {
+            setDashReady -= dashCooldownBoost;
+        }
+    }
+
+    public void UpgradeDashStrengh()
+    {
+        dashStrengh += dashStrenghBoost;
     }
 
     private void Dash()
