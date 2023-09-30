@@ -28,6 +28,11 @@ public class Enemy_Health_Controller : MonoBehaviour
             ParticleSystem hurtVSX = Instantiate(hurtParticles, collision.transform.position, Quaternion.identity);
             Destroy(hurtVSX, 0.2f);
         }
+
+        if (collision.gameObject.layer == 8)
+        {
+            collision.gameObject.GetComponent<Player_Health_Controller>().TakeDamage(damage);
+        }
     }
 
     public void TakeDamage(int damage, float knockback)

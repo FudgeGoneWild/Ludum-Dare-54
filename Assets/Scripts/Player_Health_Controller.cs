@@ -13,10 +13,15 @@ public class Player_Health_Controller : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     [SerializeField] private SpriteRenderer gunspriteRenderer;
+    [SerializeField] private ParticleSystem playerHurtVFX;
+
+    private Camera_Animation_Controller camera_Animation;
+
     // Start is called before the first frame update
 
     private void Start()
     {
+        camera_Animation = FindAnyObjectByType<Camera_Animation_Controller>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -24,11 +29,23 @@ public class Player_Health_Controller : MonoBehaviour
     {
         if (collision.gameObject.layer == 6 && !invincible)
         {
-            StartCoroutine(nameof(Invincible));
+            StartCoroutine(nameof(FreezeFrame));
             //give damage
 
             Debug.Log("Take damage from " + collision.gameObject.name);
         }
+    }
+
+    private IEnumerator FreezeFrame()
+    {
+        ParticleSystem currHurtVFX = Instantiate(playerHurtVFX,transform.position, Quaternion.identity);
+        Destroy(currHurtVFX, 0.5f);
+        gunspriteRenderer.color = flashColor;
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(0.5f);
+        Time.timeScale = 1f;
+        camera_Animation.HeavyShake();
+        StartCoroutine(nameof(Invincible));
     }
 
     private IEnumerator Invincible()
