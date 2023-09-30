@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Shoe
   m_EditorClassIdentifier: 
   ItemName: Dash
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 3953791812882387544, guid: 33361f8c1e33b534b8f091c46c83a3c0, type: 3}
   ItemBoost: DashStrengh
   amount: 0.05
+  description: Dash Strengh Increase

@@ -117,7 +117,7 @@ public class Player_Shooting_Controller : MonoBehaviour
     {
         if (Physics2D.OverlapCircle(transform.position, pickup_R, gun) == true)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.E) && Physics2D.OverlapCircle(transform.position, pickup_R, gun).GetComponent<Gun_Compiler_Controller>().canPickup)
             {
 
                 gun_Data = Physics2D.OverlapCircle(transform.position, pickup_R, gun).GetComponent<Gun_Compiler_Controller>().currGun;

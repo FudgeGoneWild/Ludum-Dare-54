@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Coffee
   m_EditorClassIdentifier: 
   ItemName: Coffee
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 164888841967728803, guid: 33361f8c1e33b534b8f091c46c83a3c0, type: 3}
   ItemBoost: MovementSpeed
   amount: 0.05
+  description: Movement Speed Increase

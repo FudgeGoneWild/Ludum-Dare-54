@@ -9,4 +9,5 @@ public class Item_Data : ScriptableObject
     [SerializeField] public Sprite itemSprite;
     [SerializeField] public string ItemBoost;
     [SerializeField] public float amount;
+    [SerializeField] public string description;
 }

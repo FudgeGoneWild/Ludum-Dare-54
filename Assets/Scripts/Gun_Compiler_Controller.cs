@@ -8,7 +8,7 @@ public class Gun_Compiler_Controller : MonoBehaviour
     [SerializeField] List<Gun_Data> gun_Datas = new List<Gun_Data>();
     [SerializeField] public Gun_Data currGun;
     SpriteRenderer spriteRenderer;
-
+    public bool canPickup = false;
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -28,7 +28,7 @@ public class Gun_Compiler_Controller : MonoBehaviour
         }
 
         currGun = gun_Datas[Random.Range(0, gun_Datas.Count)];   
-        
+        canPickup = true;
         spriteRenderer.sprite = currGun.gunSprite;
     }
 

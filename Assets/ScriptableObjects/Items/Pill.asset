@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Pill
   m_EditorClassIdentifier: 
   ItemName: Pill
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: -6896710152918094965, guid: 33361f8c1e33b534b8f091c46c83a3c0, type: 3}
   ItemBoost: MaxHealth
   amount: 1
+  description: Max Health Increase

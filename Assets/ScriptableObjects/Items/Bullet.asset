@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: 
   ItemName: Bullet
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 2200834310921872545, guid: 33361f8c1e33b534b8f091c46c83a3c0, type: 3}
   ItemBoost: MaxAmmo
   amount: 2
+  description: Max Ammo Increased

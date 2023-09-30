@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
+using TMPro.EditorUtilities;
 
 public class Item_Compiler : MonoBehaviour
 {
     private PlayerUpgrade_Manager _manager;
     [SerializeField] Item_Data item_Data;
     [SerializeField] LayerMask player;
+
+    [SerializeField] GameObject popUp;
 
     [SerializeField] List<Item_Data> items; 
     private SpriteRenderer spriteRenderer;
@@ -28,8 +33,18 @@ public class Item_Compiler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _manager.item_Data = item_Data;
-        _manager.UpGrade();
-        Destroy(gameObject);
+
+
+        if (collision.gameObject.layer == 8)
+        {
+          
+            GameObject currpopup = Instantiate(popUp, transform.position, Quaternion.identity);
+            currpopup.transform.GetChild(0).GetComponent<TMP_Text>().SetText(item_Data.description);
+            Destroy(currpopup, 5f);
+            _manager.item_Data = item_Data;
+            _manager.UpGrade();
+            Destroy(gameObject);
+        }
+
     }
 }
