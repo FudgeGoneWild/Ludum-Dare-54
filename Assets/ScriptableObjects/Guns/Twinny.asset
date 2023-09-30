@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1cbb9e852ee1ec4da3a79f3c04c6905, type: 3}
-  m_Name: Beginner Pistol
+  m_Name: Twinny
   m_EditorClassIdentifier: 
-  gunName: Weakling
-  MaxAmmo: 15
-  fireRate: 0.8
-  knockBack: 1
+  gunName: Shotgun
+  MaxAmmo: 32
+  fireRate: 0.6
+  knockBack: 7
   bulletSpeed: 10
-  gunSpray: 1
-  firePointPOS: {x: 0.799, y: -0.243, z: 0}
-  shotgun: 0
-  armsWithGun: {fileID: -6680341835258998867, guid: d58d5fb4216412446baa034a871fc074, type: 3}
-  gunSprite: {fileID: 8748881472261230855, guid: 5048c78a26ff8dc479e0441825a08a62, type: 3}
+  gunSpray: 2
+  firePointPOS: {x: 0.5, y: 0, z: 0}
+  shotgun: 1
+  armsWithGun: {fileID: 0}
+  gunSprite: {fileID: 6713297578725988840, guid: 5048c78a26ff8dc479e0441825a08a62, type: 3}
   gunSound: {fileID: 0}
   gunEmptySound: {fileID: 0}
   bulletPrefab: {fileID: 3819918032838243393, guid: e807f977cc242e84cbeaf2e7789495cb, type: 3}

@@ -18,7 +18,12 @@ public class Gun_Compiler_Controller : MonoBehaviour
     {
         for (int i = 0; i < gun_Datas.Count; i++)
         {
-            yield return new WaitForSecondsRealtime(0.1f);
+            yield return new WaitForSecondsRealtime(0.3f);
+            spriteRenderer.sprite = gun_Datas[i].gunSprite;
+        }
+        for (int i = 0; i < gun_Datas.Count; i++)
+        {
+            yield return new WaitForSecondsRealtime(0.3f);
             spriteRenderer.sprite = gun_Datas[i].gunSprite;
         }
 

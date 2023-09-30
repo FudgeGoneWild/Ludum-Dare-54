@@ -16,8 +16,14 @@ public class Player_Shooting_Controller : MonoBehaviour
     [SerializeField] float knockBack;
     [SerializeField] float spray;
 
+    [SerializeField] bool isShotgun;
+    [SerializeField] int amountofShots;
+
     [Header("Gun compile properties")]
     [SerializeField] private GameObject gun_Anchor;
+    [SerializeField] private AudioSource audioSouce;
+    [SerializeField] private AudioClip gunFireSound;
+    [SerializeField] private AudioClip gunEmpty;
 
     [Header("PickUpRadius")]
     [SerializeField] float pickup_R;
@@ -49,12 +55,38 @@ public class Player_Shooting_Controller : MonoBehaviour
             shootDirection.z = 0.0f;
             shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
             shootDirection = shootDirection - transform.position;
-            GameObject currBullet = Instantiate(bullet, firePoint.transform.position, Quaternion.identity);
-            currBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootDirection.x + Random.Range(shootDirection.x - spray, shootDirection.x + spray) * bulletSpeed, shootDirection.y + Random.Range(shootDirection.y - spray, shootDirection.y + spray) * bulletSpeed);
-            currAmmo--;
+            if (isShotgun)
+            {
+                for (int i = 0; i < amountofShots; i++)
+                {
+                    GameObject currBullet = Instantiate(bullet, firePoint.transform.position, Quaternion.identity);
+                    currBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootDirection.x + Random.Range(shootDirection.x - spray, shootDirection.x + spray) * bulletSpeed, shootDirection.y + Random.Range(shootDirection.y - spray, shootDirection.y + spray) * bulletSpeed);
+                
+                }
+                currAmmo--;
+            }
+            else
+            {
+                GameObject currBullet = Instantiate(bullet, firePoint.transform.position, Quaternion.identity);
+                currBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootDirection.x + Random.Range(shootDirection.x - spray, shootDirection.x + spray) * bulletSpeed, shootDirection.y + Random.Range(shootDirection.y - spray, shootDirection.y + spray) * bulletSpeed);
+                currAmmo--;
+            }
+            PlaySound(gunFireSound);
             ApplyKnockBack();
             StartCoroutine(nameof(FireRateDelay));
         }
+        else if (currAmmo == 0 && Input.GetKey(KeyCode.Mouse0) && canFire)
+        {
+            PlaySound(gunEmpty);
+            StartCoroutine(nameof(FireRateDelay));
+            //put in something to show ammo is fin;
+        }
+    }
+
+    private void PlaySound(AudioClip sound)
+    {
+        audioSouce.clip = sound;
+        audioSouce.Play();
     }
 
     private void PickUpGun()
@@ -101,6 +133,11 @@ public class Player_Shooting_Controller : MonoBehaviour
         fireRate = currGun.fireRate;
         knockBack = currGun.knockBack;
         spray = currGun.gunSpray;
+        isShotgun = currGun.shotgun;
+
+        gunFireSound = gun_Data.gunSound;
+        gunEmpty = gun_Data.gunEmptySound;
+        gun_Anchor.GetComponent<SpriteRenderer>().sprite = currGun.armsWithGun;
     }
 
     private void OnDrawGizmos()

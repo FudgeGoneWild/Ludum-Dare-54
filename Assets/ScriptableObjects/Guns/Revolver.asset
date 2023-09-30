@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1cbb9e852ee1ec4da3a79f3c04c6905, type: 3}
-  m_Name: Beginner Pistol
+  m_Name: Revolver
   m_EditorClassIdentifier: 
-  gunName: Weakling
-  MaxAmmo: 15
+  gunName: Revolver
+  MaxAmmo: 35
   fireRate: 0.8
-  knockBack: 1
-  bulletSpeed: 10
-  gunSpray: 1
-  firePointPOS: {x: 0.799, y: -0.243, z: 0}
+  knockBack: 4
+  bulletSpeed: 30
+  gunSpray: 0.6
+  firePointPOS: {x: 0.917, y: -0.208, z: 0}
   shotgun: 0
-  armsWithGun: {fileID: -6680341835258998867, guid: d58d5fb4216412446baa034a871fc074, type: 3}
-  gunSprite: {fileID: 8748881472261230855, guid: 5048c78a26ff8dc479e0441825a08a62, type: 3}
-  gunSound: {fileID: 0}
-  gunEmptySound: {fileID: 0}
+  armsWithGun: {fileID: 5026803851008600391, guid: d58d5fb4216412446baa034a871fc074, type: 3}
+  gunSprite: {fileID: 1047313371509730752, guid: 5048c78a26ff8dc479e0441825a08a62, type: 3}
+  gunSound: {fileID: 8300000, guid: 3cf0022870474844ead57cc2ca18ae35, type: 3}
+  gunEmptySound: {fileID: 8300000, guid: 68ec0ca6734af5940964c59a9119e960, type: 3}
   bulletPrefab: {fileID: 3819918032838243393, guid: e807f977cc242e84cbeaf2e7789495cb, type: 3}
