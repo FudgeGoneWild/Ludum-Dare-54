@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 [CreateAssetMenu(fileName = "Gun_Data", menuName = "Gun Data", order = 1)]
 public class Gun_Data : ScriptableObject
@@ -19,6 +20,7 @@ public class Gun_Data : ScriptableObject
     [SerializeField] public Sprite gunSprite;
     [SerializeField] public AudioClip gunSound;
     [SerializeField] public AudioClip gunEmptySound;
+    [SerializeField] public string shakeString;
 
     [Header("Prefabs")]
     [SerializeField] public GameObject bulletPrefab;

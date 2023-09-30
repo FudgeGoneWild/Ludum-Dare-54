@@ -20,9 +20,12 @@ public class PlayerMovement_Controller : MonoBehaviour
     private bool canDash = true;
     private bool dashReady = true;
 
+
+    private Camera_Animation_Controller Cameracontroller;
     // Start is called before the first frame update
     void Start()
     {
+        Cameracontroller = FindObjectOfType<Camera_Animation_Controller>();
         body = GetComponent<Rigidbody2D>();
         lineRenderer = GetComponent<TrailRenderer>();    
     }
@@ -35,6 +38,7 @@ public class PlayerMovement_Controller : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift) && canDash && dashReady)
         {
+            StartCoroutine(nameof(FreezeFrame));
             Dash();
         }
     }
@@ -57,10 +61,13 @@ public class PlayerMovement_Controller : MonoBehaviour
 
     private void Dash()
     {
+        
+        Cameracontroller.MediumShake();
         StartCoroutine(nameof(DashCoolDown));
         StartCoroutine(nameof(SetDashReady));
         body.AddForce(axisMovement.normalized * dashStrengh, ForceMode2D.Impulse);
         lineRenderer.enabled = true;
+
     }
 
     IEnumerator SetDashReady()
@@ -77,6 +84,13 @@ public class PlayerMovement_Controller : MonoBehaviour
         body.velocity = Vector2.zero;
         lineRenderer.enabled = false;
         canDash = true;
+    }
+
+    IEnumerator FreezeFrame()
+    { 
+        Time.timeScale = 0.0f;
+        yield return new WaitForSecondsRealtime(0.05f);
+        Time.timeScale = 1.0f;
     }
 
 

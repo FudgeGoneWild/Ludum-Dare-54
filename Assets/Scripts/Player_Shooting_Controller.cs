@@ -24,10 +24,19 @@ public class Player_Shooting_Controller : MonoBehaviour
     [SerializeField] private AudioSource audioSouce;
     [SerializeField] private AudioClip gunFireSound;
     [SerializeField] private AudioClip gunEmpty;
+    [SerializeField] private string ShakeName;
 
     [Header("PickUpRadius")]
     [SerializeField] float pickup_R;
     [SerializeField] LayerMask gun;
+
+    [Header("Flash Rendering")]
+    [SerializeField] Sprite[] flashes;
+    [SerializeField] GameObject flashPoint;
+
+
+    private Camera_Animation_Controller camera_Controller;
+    private SpriteRenderer flashSR;
 
     bool canFire = true;
 
@@ -35,8 +44,10 @@ public class Player_Shooting_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        camera_Controller = FindObjectOfType<Camera_Animation_Controller>();
         rb = GetComponent<Rigidbody2D>();
         SetGunProperties(gun_Data);
+        flashSR = flashPoint.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -71,9 +82,11 @@ public class Player_Shooting_Controller : MonoBehaviour
                 currBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootDirection.x + Random.Range(shootDirection.x - spray, shootDirection.x + spray) * bulletSpeed, shootDirection.y + Random.Range(shootDirection.y - spray, shootDirection.y + spray) * bulletSpeed);
                 currAmmo--;
             }
+            StartCoroutine(nameof(Flash));
             PlaySound(gunFireSound);
             ApplyKnockBack();
             StartCoroutine(nameof(FireRateDelay));
+            camera_Controller.ChooseShake(ShakeName);
         }
         else if (currAmmo == 0 && Input.GetKey(KeyCode.Mouse0) && canFire)
         {
@@ -87,6 +100,14 @@ public class Player_Shooting_Controller : MonoBehaviour
     {
         audioSouce.clip = sound;
         audioSouce.Play();
+    }
+
+    private IEnumerator Flash()
+    {
+        flashSR.sprite = flashes[Random.Range(0, flashes.Length - 1)];
+        flashPoint.SetActive(true);
+        yield return new WaitForSecondsRealtime(0.05f);
+        flashPoint.SetActive(false);
     }
 
     private void PickUpGun()
@@ -134,6 +155,7 @@ public class Player_Shooting_Controller : MonoBehaviour
         knockBack = currGun.knockBack;
         spray = currGun.gunSpray;
         isShotgun = currGun.shotgun;
+        ShakeName = currGun.shakeString;
 
         gunFireSound = gun_Data.gunSound;
         gunEmpty = gun_Data.gunEmptySound;
