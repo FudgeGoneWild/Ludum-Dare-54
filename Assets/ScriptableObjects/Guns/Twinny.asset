@@ -18,9 +18,9 @@ MonoBehaviour:
   knockBack: 7
   bulletSpeed: 10
   gunSpray: 2
-  firePointPOS: {x: 0.5, y: 0, z: 0}
+  firePointPOS: {x: 1.103, y: -0.177, z: 0}
   shotgun: 1
-  armsWithGun: {fileID: 0}
+  armsWithGun: {fileID: 1584287500908614258, guid: d58d5fb4216412446baa034a871fc074, type: 3}
   gunSprite: {fileID: 6713297578725988840, guid: 5048c78a26ff8dc479e0441825a08a62, type: 3}
   gunSound: {fileID: 0}
   gunEmptySound: {fileID: 0}
