@@ -6,7 +6,7 @@ public class Gun_Compiler_Controller : MonoBehaviour
 {
     [Header("Guns")]
     [SerializeField] List<Gun_Data> gun_Datas = new List<Gun_Data>();
-    [SerializeField] Gun_Data currGun;
+    [SerializeField] public Gun_Data currGun;
     SpriteRenderer spriteRenderer;
 
     private void Awake()
