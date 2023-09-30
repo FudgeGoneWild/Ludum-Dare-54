@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -9120772286691107210}
   - component: {fileID: -3680895072950013159}
   m_Layer: 7
-  m_Name: Bullet
+  m_Name: ShotGunBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9772253, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 1683302317989866566, guid: f09cad412f3985940aa07ab6e8f6a6e1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -167,7 +167,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.20672607
+        value: 0.07211304
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -175,8 +175,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.24792081
-        value: 0.10985696
+        time: 0.23479825
+        value: 0.02332437
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -207,7 +207,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 0, b: 0, a: 0.53333336}
-      key1: {r: 1, g: 0.91838396, b: 0, a: 1}
+      key1: {r: 1, g: 0.91838396, b: 0, a: 0.5529412}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -241,7 +241,7 @@ TrailRenderer:
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.05
   m_MaskInteraction: 0
   m_Autodestruct: 0
   m_Emitting: 1
@@ -259,7 +259,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  knockBack: 5
+  knockBack: 2
+  passThrough: 0
 --- !u!70 &-3680895072950013159
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

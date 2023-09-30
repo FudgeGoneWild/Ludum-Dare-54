@@ -34,7 +34,7 @@ public class Player_Shooting_Controller : MonoBehaviour
     [SerializeField] Sprite[] flashes;
     [SerializeField] GameObject flashPoint;
 
-
+    private PlayerAim_Controller playerAim;
     private Camera_Animation_Controller camera_Controller;
     private SpriteRenderer flashSR;
 
@@ -44,6 +44,7 @@ public class Player_Shooting_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerAim = GetComponent<PlayerAim_Controller>();
         camera_Controller = FindObjectOfType<Camera_Animation_Controller>();
         rb = GetComponent<Rigidbody2D>();
         SetGunProperties(gun_Data);
@@ -70,7 +71,7 @@ public class Player_Shooting_Controller : MonoBehaviour
             {
                 for (int i = 0; i < amountofShots; i++)
                 {
-                    GameObject currBullet = Instantiate(bullet, firePoint.transform.position, Quaternion.identity);
+                    GameObject currBullet = Instantiate(bullet, firePoint.transform.position, Quaternion.EulerAngles(0,0,playerAim.GetAngle()));
                     currBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootDirection.x + Random.Range(shootDirection.x - spray, shootDirection.x + spray) * bulletSpeed, shootDirection.y + Random.Range(shootDirection.y - spray, shootDirection.y + spray) * bulletSpeed);
                 
                 }
@@ -78,7 +79,7 @@ public class Player_Shooting_Controller : MonoBehaviour
             }
             else
             {
-                GameObject currBullet = Instantiate(bullet, firePoint.transform.position, Quaternion.identity);
+                GameObject currBullet = Instantiate(bullet, firePoint.transform.position, Quaternion.EulerAngles(0,0,playerAim.GetAngle()));
                 currBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootDirection.x + Random.Range(shootDirection.x - spray, shootDirection.x + spray) * bulletSpeed, shootDirection.y + Random.Range(shootDirection.y - spray, shootDirection.y + spray) * bulletSpeed);
                 currAmmo--;
             }

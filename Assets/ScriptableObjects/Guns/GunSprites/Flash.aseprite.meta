@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 16
+    spritePixelsToUnits: 10
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638316892963460882
+  platformSettingsDirtyTick: 638316937146093821
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -142,7 +142,7 @@ ScriptedImporter:
   spriteSheetImportData:
   - name: Flash_0
     originalName: 
-    pivot: {x: 0.27690712, y: 0.40588284}
+    pivot: {x: 0.27310768, y: 0.39258432}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -162,7 +162,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_1
     originalName: 
-    pivot: {x: 0.2854421, y: 0.40922546}
+    pivot: {x: 0.26834416, y: 0.40162635}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -182,7 +182,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_2
     originalName: 
-    pivot: {x: 0.2730639, y: 0.40922546}
+    pivot: {x: 0.26181364, y: 0.39797544}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -202,7 +202,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_3
     originalName: 
-    pivot: {x: 0.27718997, y: 0.40922546}
+    pivot: {x: 0.26226902, y: 0.4017651}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -222,7 +222,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_4
     originalName: 
-    pivot: {x: 0.2816081, y: 0.40827537}
+    pivot: {x: 0.2564373, y: 0.40491915}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -242,7 +242,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_5
     originalName: 
-    pivot: {x: 0.27845016, y: 0.4041946}
+    pivot: {x: 0.25562337, y: 0.40517378}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -262,7 +262,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_6
     originalName: 
-    pivot: {x: 0.284438, y: 0.4041946}
+    pivot: {x: 0.26109338, y: 0.40419483}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -282,7 +282,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_7
     originalName: 
-    pivot: {x: 0.27246237, y: 0.39820695}
+    pivot: {x: 0.2587123, y: 0.40445685}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -302,7 +302,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_8
     originalName: 
-    pivot: {x: 0.2809193, y: 0.40916157}
+    pivot: {x: 0.2595415, y: 0.404886}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -322,7 +322,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_9
     originalName: 
-    pivot: {x: 0.2702322, y: 0.40381813}
+    pivot: {x: 0.25740528, y: 0.4059558}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -342,7 +342,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_10
     originalName: 
-    pivot: {x: 0.27023232, y: 0.40381837}
+    pivot: {x: 0.25851744, y: 0.40616143}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -362,7 +362,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_11
     originalName: 
-    pivot: {x: 0.27557576, y: 0.40381837}
+    pivot: {x: 0.25448906, y: 0.4038185}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -382,7 +382,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_12
     originalName: 
-    pivot: {x: 0.27557564, y: 0.40381837}
+    pivot: {x: 0.25159168, y: 0.40062058}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -402,7 +402,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_13
     originalName: 
-    pivot: {x: 0.27023244, y: 0.40381837}
+    pivot: {x: 0.25348163, y: 0.40381825}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -422,7 +422,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_14
     originalName: 
-    pivot: {x: 0.27557564, y: 0.40381837}
+    pivot: {x: 0.2568326, y: 0.40616143}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -442,7 +442,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_15
     originalName: 
-    pivot: {x: 0.27557576, y: 0.40381816}
+    pivot: {x: 0.25067848, y: 0.40713775}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -462,7 +462,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_16
     originalName: 
-    pivot: {x: 0.27023232, y: 0.40381816}
+    pivot: {x: 0.2486546, y: 0.40879756}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -482,7 +482,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_17
     originalName: 
-    pivot: {x: 0.27557564, y: 0.40381816}
+    pivot: {x: 0.25891352, y: 0.40125486}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -522,7 +522,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Flash_19
     originalName: 
-    pivot: {x: 0.2702322, y: 0.4091616}
+    pivot: {x: 0.26257086, y: 0.40405387}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:

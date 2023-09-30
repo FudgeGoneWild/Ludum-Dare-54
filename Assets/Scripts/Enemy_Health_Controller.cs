@@ -15,16 +15,17 @@ public class Enemy_Health_Controller : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 7)
         {
             TakeDamage(collision.gameObject.GetComponent<BulletScript>().damage, collision.gameObject.GetComponent<BulletScript>().knockBack);
-            
+
         }
     }
 
-    private void TakeDamage(int damage, float knockback)
+    public void TakeDamage(int damage, float knockback)
     {
         health -= damage;
         rb.AddRelativeForce(Vector2.down * knockback, ForceMode2D.Impulse);
