@@ -121,15 +121,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Enemy_Medium_Frame_0
     originalName: 
-    pivot: {x: 0.53846157, y: 0.5}
+    pivot: {x: 0.5, y: 0.53846157}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 26
-      y: 4
-      width: 13
-      height: 16
+      x: 4
+      y: 26
+      width: 16
+      height: 13
     spriteID: 8093d6a10b2d85f4388eb1c8f4cc5406
     spriteBone: []
     spriteOutline: []
@@ -138,18 +138,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 26, y: 4}
+    uvTransform: {x: 4, y: 26}
   - name: Enemy_Medium_Frame_1
     originalName: 
-    pivot: {x: 0.53846157, y: 0.5}
+    pivot: {x: 0.5, y: 0.53846157}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 47
-      y: 4
-      width: 13
-      height: 16
+      x: 4
+      y: 47
+      width: 16
+      height: 13
     spriteID: 3253c6c4cc9bdda4480db22441e418cd
     spriteBone: []
     spriteOutline: []
@@ -158,7 +158,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 47, y: 4}
+    uvTransform: {x: 4, y: 47}
   - name: Enemy_Medium_Frame_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -168,8 +168,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 14
-      height: 16
+      width: 16
+      height: 14
     spriteID: 4ce40ec01327aa04a83b7204532abc9d
     spriteBone: []
     spriteOutline: []
@@ -181,15 +181,15 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Enemy_Medium_Frame_3
     originalName: 
-    pivot: {x: 0.53846157, y: 0.5}
+    pivot: {x: 0.5, y: 0.53846157}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 28
-      width: 13
-      height: 16
+      x: 28
+      y: 4
+      width: 16
+      height: 13
     spriteID: 8bba646cc9a46df4a961a71a3685b156
     spriteBone: []
     spriteOutline: []
@@ -198,7 +198,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 28}
+    uvTransform: {x: 28, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -211,34 +211,34 @@ ScriptedImporter:
     - name: Enemy_Medium_Frame_0
       frameIndex: 0
       cellRect:
-        x: 1
-        y: 0
-        width: 13
-        height: 16
+        x: 0
+        y: 1
+        width: 16
+        height: 13
       spriteId: 8093d6a10b2d85f4388eb1c8f4cc5406
     - name: Enemy_Medium_Frame_1
       frameIndex: 1
       cellRect:
-        x: 1
-        y: 0
-        width: 13
-        height: 16
+        x: 0
+        y: 1
+        width: 16
+        height: 13
       spriteId: 3253c6c4cc9bdda4480db22441e418cd
     - name: Enemy_Medium_Frame_2
       frameIndex: 2
       cellRect:
-        x: 1
-        y: 0
-        width: 14
-        height: 16
+        x: 0
+        y: 1
+        width: 16
+        height: 14
       spriteId: 4ce40ec01327aa04a83b7204532abc9d
     - name: Enemy_Medium_Frame_3
       frameIndex: 3
       cellRect:
-        x: 1
-        y: 0
-        width: 13
-        height: 16
+        x: 0
+        y: 1
+        width: 16
+        height: 13
       spriteId: 8bba646cc9a46df4a961a71a3685b156
     linkedCells: []
     parentIndex: -1
