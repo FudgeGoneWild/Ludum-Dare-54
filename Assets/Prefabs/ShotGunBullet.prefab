@@ -260,7 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   knockBack: 2
-  passThrough: 0
+  bulletSparks: {fileID: 596903632489056002, guid: 3da64636f34eb8b46bf078f185ab5e98, type: 3}
 --- !u!70 &-3680895072950013159
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
