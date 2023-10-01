@@ -34,7 +34,7 @@ public class Item_Compiler : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-
+        //tolllie
         if (collision.gameObject.layer == 8)
         {
           
