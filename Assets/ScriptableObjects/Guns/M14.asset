@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: M14
   MaxAmmo: 105
-  fireRate: 0.1
+  fireRate: 0.8
   knockBack: 0.5
   bulletSpeed: 20
   gunSpray: 0.3

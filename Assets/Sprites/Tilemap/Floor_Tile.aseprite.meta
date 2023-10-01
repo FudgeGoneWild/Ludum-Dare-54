@@ -142,7 +142,7 @@ ScriptedImporter:
   spriteSheetImportData:
   - name: Floor_Tile_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -162,7 +162,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Floor_Tile_1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -182,7 +182,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Floor_Tile_2
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -202,7 +202,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Floor_Tile_3
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -222,7 +222,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Floor_Tile_4
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -242,7 +242,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Floor_Tile_5
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -262,7 +262,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Floor_Tile_6
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -282,7 +282,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Floor_Tile_7
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -302,7 +302,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Floor_Tile_8
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -322,7 +322,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Floor_Tile_9
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -342,7 +342,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Floor_Tile_10
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -362,7 +362,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Floor_Tile_11
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -382,7 +382,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Floor_Tile_12
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -402,7 +402,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: Floor_Tile_13
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -412,6 +412,26 @@ ScriptedImporter:
       width: 16
       height: 16
     spriteID: 3b0e1084fa31a544cb7fc7e74d61c765
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: Floor_Tile_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 68
+      y: 4
+      width: 16
+      height: 16
+    spriteID: 7cce16058ade05c47abd1dd7a5c55994
     spriteBone: []
     spriteOutline: []
     vertices: []
