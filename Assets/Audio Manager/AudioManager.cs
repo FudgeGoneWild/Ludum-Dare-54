@@ -57,6 +57,10 @@ public class AudioManager : MonoBehaviour
         sFX_Slider = GameObject.FindGameObjectWithTag("SFXSlider").GetComponent<Slider>();
         music_Slider = GameObject.FindGameObjectWithTag("MusicSlider").GetComponent<Slider>();
 
+        master_Slider.onValueChanged.AddListener(SetMasterVolume);
+        sFX_Slider.onValueChanged.AddListener(SetSFXVolume);
+        music_Slider.onValueChanged.AddListener(SetMusicVolume);
+
     }
 
     private void Start()

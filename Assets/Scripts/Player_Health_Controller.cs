@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Player_Health_Controller : MonoBehaviour
 {
+    [SerializeField] AudioClip healthClip;
+    private AudioManager manager;
+
     [Header("Player Health Properties")]
     [SerializeField] private int Maxhealth = 5;
     [SerializeField] private int currHealth = 5;
@@ -25,6 +28,7 @@ public class Player_Health_Controller : MonoBehaviour
 
     private void Start()
     {
+        manager = FindAnyObjectByType<AudioManager>();
         camera_Animation = FindAnyObjectByType<Camera_Animation_Controller>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -98,7 +102,11 @@ public class Player_Health_Controller : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (!invincible) { currHealth -= damage; }
+        if (!invincible) 
+        {
+            manager.PlaySFX(healthClip);
+            currHealth -= damage; 
+        }
         healthUI.GetComponent<Slider>().value = currHealth;
         if (currHealth <= 0)
         {

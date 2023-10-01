@@ -6,6 +6,9 @@ using UnityEngine.Rendering;
 
 public class Player_Shooting_Controller : MonoBehaviour
 {
+    [SerializeField] AudioClip _clip;
+    private AudioManager _manager;
+
     [Header("Gun Properties")]
     [SerializeField] Gun_Data gun_Data;
     [SerializeField] GameObject firePoint;
@@ -49,6 +52,7 @@ public class Player_Shooting_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _manager = FindAnyObjectByType<AudioManager>();
         playerAim = GetComponent<PlayerAim_Controller>();
         camera_Controller = FindObjectOfType<Camera_Animation_Controller>();
         rb = GetComponent<Rigidbody2D>();
@@ -133,7 +137,7 @@ public class Player_Shooting_Controller : MonoBehaviour
 
                 gun_Data = Physics2D.OverlapCircle(transform.position, pickup_R, gun).GetComponent<Gun_Compiler_Controller>().currGun;
                 GameObject gunObject = Physics2D.OverlapCircle(transform.position, pickup_R, gun).gameObject;
-
+                _manager.PlaySFX(_clip);
                 DestroyObject(gunObject);
 
                 SetGunProperties(gun_Data);

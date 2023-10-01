@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PlayerMovement_Controller : MonoBehaviour
 {
+    [SerializeField] AudioClip m_Clip;
+    private AudioManager m_AudioManager;
+
     [Header("Movement Properties")]
     [SerializeField] public float speed = 10f;
     [SerializeField] public float speedboost = 0;
@@ -25,6 +28,7 @@ public class PlayerMovement_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_AudioManager = FindAnyObjectByType<AudioManager>();
         Cameracontroller = FindObjectOfType<Camera_Animation_Controller>();
         body = GetComponent<Rigidbody2D>();
         lineRenderer = GetComponent<TrailRenderer>();    
@@ -74,7 +78,7 @@ public class PlayerMovement_Controller : MonoBehaviour
 
     private void Dash()
     {
-        
+        m_AudioManager.PlaySFX(m_Clip);
         Cameracontroller.MediumShake();
         StartCoroutine(nameof(DashCoolDown));
         StartCoroutine(nameof(SetDashReady));
