@@ -12,7 +12,7 @@ public class acidPool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DestroyObject(gameObject, 5f);
+        DestroyObject(gameObject, 30f);
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class acidPool : MonoBehaviour
     {
         player.GetComponent<SpriteRenderer>().color = acid;
         candamage = false;
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(1f);
         candamage = true;
         player.GetComponent<SpriteRenderer>().color = Color.white;
     }
