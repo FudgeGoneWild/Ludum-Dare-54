@@ -18,12 +18,14 @@ public class Enemy_Health_Controller : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer rb_sprite;
     private GameStart_Controller controller;
+    private Points_Controller points_Controller;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb_sprite = rb.GetComponent<SpriteRenderer>();
         controller = FindAnyObjectByType<GameStart_Controller>();
+        points_Controller = FindAnyObjectByType<Points_Controller>();
     }
 
 
@@ -49,7 +51,7 @@ public class Enemy_Health_Controller : MonoBehaviour
         StartCoroutine(nameof(flashHurt));
         if (health <= 0)
         {
-
+            points_Controller.UpdatePoints(points);
             GameObject currpopup = Instantiate(popup, transform.position, Quaternion.identity);
             currpopup.transform.GetChild(0).GetComponent<TMP_Text>().SetText(points.ToString());
             Destroy(currpopup, 5f);

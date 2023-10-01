@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Health_Controller : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class Player_Health_Controller : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     [SerializeField] private SpriteRenderer gunspriteRenderer;
     [SerializeField] private ParticleSystem playerHurtVFX;
+
+    [SerializeField] GameObject healthUI;
 
     private Camera_Animation_Controller camera_Animation;
 
@@ -82,6 +85,7 @@ public class Player_Health_Controller : MonoBehaviour
     public void UpdateMaxHealth()
     {
         Maxhealth += healthBoost;
+        healthUI.GetComponent<Slider>().maxValue = Maxhealth;
     }
 
     public void HealthPickup(int healthboost)
@@ -91,7 +95,8 @@ public class Player_Health_Controller : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currHealth -= damage;
+        if (!invincible) { currHealth -= damage; }
+        healthUI.GetComponent<Slider>().value = currHealth;
         if (currHealth <= 0)
         {
             //play end cutscene;

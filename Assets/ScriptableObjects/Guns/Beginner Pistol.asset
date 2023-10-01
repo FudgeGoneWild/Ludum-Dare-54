@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Weakling
   MaxAmmo: 15
-  fireRate: 0.8
+  fireRate: 1
   knockBack: 0.2
   bulletSpeed: 10
   gunSpray: 1

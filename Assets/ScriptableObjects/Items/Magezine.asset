@@ -15,5 +15,5 @@ MonoBehaviour:
   ItemName: Magezine
   itemSprite: {fileID: 2627966308765758795, guid: 33361f8c1e33b534b8f091c46c83a3c0, type: 3}
   ItemBoost: FireRate
-  amount: 0.15
+  amount: 0.01
   description: Fire Rate Increased

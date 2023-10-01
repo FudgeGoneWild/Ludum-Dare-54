@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Uzi
   MaxAmmo: 145
-  fireRate: 0.05
+  fireRate: 0.1
   knockBack: 0.05
   bulletSpeed: 35
   gunSpray: 3

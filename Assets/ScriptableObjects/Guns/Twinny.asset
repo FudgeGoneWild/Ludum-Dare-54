@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Shotgun
   MaxAmmo: 32
-  fireRate: 1.2
+  fireRate: 1.8
   knockBack: 2
   bulletSpeed: 10
   gunSpray: 2

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -27,6 +28,8 @@ public class Player_Shooting_Controller : MonoBehaviour
     [SerializeField] private AudioClip gunFireSound;
     [SerializeField] private AudioClip gunEmpty;
     [SerializeField] private string ShakeName;
+
+    [SerializeField] TMP_Text ammoUI;
 
     [Header("PickUpRadius")]
     [SerializeField] float pickup_R;
@@ -60,6 +63,12 @@ public class Player_Shooting_Controller : MonoBehaviour
         PickUpGun();
     }
 
+    void UpdateAmmo()
+    {
+        ammoUI.SetText(currAmmo.ToString() + "/" + (maxAmmo+maxAmmoBoost).ToString());
+        ammoUI.GetComponent<Animation>().Play();   
+    }
+
     private void Fire()
     {
         if (Input.GetKey(KeyCode.Mouse0) && canFire && currAmmo != 0)
@@ -78,12 +87,14 @@ public class Player_Shooting_Controller : MonoBehaviour
                 
                 }
                 currAmmo--;
+                UpdateAmmo();
             }
             else
             {
                 GameObject currBullet = Instantiate(bullet, firePoint.transform.position, Quaternion.EulerAngles(0,0,playerAim.GetAngle()));
                 currBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootDirection.x + Random.Range(shootDirection.x - spray, shootDirection.x + spray) * bulletSpeed, shootDirection.y + Random.Range(shootDirection.y - spray, shootDirection.y + spray) * bulletSpeed);
                 currAmmo--;
+                UpdateAmmo();
             }
             StartCoroutine(nameof(Flash));
             PlaySound(gunFireSound);
@@ -163,6 +174,8 @@ public class Player_Shooting_Controller : MonoBehaviour
         gunFireSound = gun_Data.gunSound;
         gunEmpty = gun_Data.gunEmptySound;
         gun_Anchor.GetComponent<SpriteRenderer>().sprite = currGun.armsWithGun;
+
+        UpdateAmmo();
     }
 
     private void OnDrawGizmos()
