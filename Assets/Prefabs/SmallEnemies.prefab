@@ -223,6 +223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3926a15feab02f46a21291922a40467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: ca015fb5dd4adba4f87b249d360803be, type: 3}
   health: 5
   damage: 1
   popup: {fileID: 2515949289033439672, guid: 4e47c15808721fc4a91a6172e201bfc2, type: 3}

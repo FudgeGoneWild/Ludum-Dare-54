@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class Enemy_Health_Controller : MonoBehaviour
 {
+    [SerializeField] AudioManager audioManager;
+    [SerializeField] AudioClip deathSound;
     [SerializeField] int health = 3;
     [SerializeField] int damage = 1;
     [SerializeField] GameObject popup;
@@ -25,6 +27,7 @@ public class Enemy_Health_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindAnyObjectByType<AudioManager>();
         rb = GetComponent<Rigidbody2D>();
         rb_sprite = rb.GetComponent<SpriteRenderer>();
         controller = FindAnyObjectByType<GameStart_Controller>();
@@ -63,6 +66,7 @@ public class Enemy_Health_Controller : MonoBehaviour
             Destroy(currDieParticles, 1f);
             DropItem();
             FindAnyObjectByType<Camera_Animation_Controller>().HeavyShake();
+            audioManager.PlaySFX(deathSound);
             DestroyObject(gameObject);
         }
     }

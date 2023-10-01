@@ -129,8 +129,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(AudioClip clip)
     {
-        Voice_Source.clip = clip;
-        Voice_Source.Play();
+        Voice_Source.PlayOneShot(clip);
     }
 
     public void SetMusic(AudioClip musicClip)

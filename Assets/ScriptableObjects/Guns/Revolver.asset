@@ -23,6 +23,6 @@ MonoBehaviour:
   armsWithGun: {fileID: 5026803851008600391, guid: d58d5fb4216412446baa034a871fc074, type: 3}
   gunSprite: {fileID: 1047313371509730752, guid: 5048c78a26ff8dc479e0441825a08a62, type: 3}
   gunSound: {fileID: 8300000, guid: 1cbd6b06af7df3e4cacbbe271b8f01c3, type: 3}
-  gunEmptySound: {fileID: 8300000, guid: daba639e7b9c251479b78e919353aa70, type: 3}
+  gunEmptySound: {fileID: 8300000, guid: dc46fca0ec1f55b45a91b8b9e5b71300, type: 3}
   shakeString: MediumShake
   bulletPrefab: {fileID: 3819918032838243393, guid: 00157a541789a2648829b4af8172a770, type: 3}
