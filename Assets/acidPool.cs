@@ -12,7 +12,7 @@ public class acidPool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DestroyObject(gameObject, 30f);
+        DestroyObject(gameObject, 15f);
     }
 
     // Update is called once per frame
