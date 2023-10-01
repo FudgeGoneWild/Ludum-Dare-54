@@ -154,7 +154,7 @@ public class Player_Shooting_Controller : MonoBehaviour
         maxAmmo = currGun.MaxAmmo;
         currAmmo = maxAmmo + maxAmmoBoost;
         bulletSpeed = currGun.bulletSpeed;
-        fireRate = currGun.fireRate + FireRateBoost;
+        fireRate = currGun.fireRate - FireRateBoost;
         knockBack = currGun.knockBack;
         spray = currGun.gunSpray - sprayBoost;
         isShotgun = currGun.shotgun;

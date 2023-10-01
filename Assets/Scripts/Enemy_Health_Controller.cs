@@ -14,11 +14,13 @@ public class Enemy_Health_Controller : MonoBehaviour
     [SerializeField] GameObject itemDrop;
     private Rigidbody2D rb;
     private SpriteRenderer rb_sprite;
+    private GameStart_Controller controller;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb_sprite = rb.GetComponent<SpriteRenderer>();
+        controller = FindAnyObjectByType<GameStart_Controller>();
     }
 
 
@@ -44,6 +46,7 @@ public class Enemy_Health_Controller : MonoBehaviour
         StartCoroutine(nameof(flashHurt));
         if (health <= 0)
         {
+         
             ParticleSystem currDieParticles = Instantiate(dieParticles, transform.position, Quaternion.identity);
             Destroy(currDieParticles, 1f);
             DropItem();
