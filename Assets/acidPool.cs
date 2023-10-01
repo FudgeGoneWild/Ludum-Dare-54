@@ -28,7 +28,7 @@ public class acidPool : MonoBehaviour
             if (candamage)
             {
 
-                ResetDamage(collision);
+                StartCoroutine(nameof(ResetDamage), collision);
                 collision.GetComponent<Player_Health_Controller>().TakeDamage(damage);
             }
         }
@@ -39,7 +39,7 @@ public class acidPool : MonoBehaviour
     {
         player.GetComponent<SpriteRenderer>().color = acid;
         candamage = false;
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(2f);
         candamage = true;
         player.GetComponent<SpriteRenderer>().color = Color.white;
     }
