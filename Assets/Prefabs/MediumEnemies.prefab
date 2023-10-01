@@ -225,6 +225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   damage: 1
+  popup: {fileID: 2515949289033439672, guid: 4e47c15808721fc4a91a6172e201bfc2, type: 3}
+  points: 10
   hurtParticles: {fileID: 8258639682326927675, guid: 4fe5c381b13c9af46b09581f7ed25d82, type: 3}
   dieParticles: {fileID: 8258639682326927675, guid: 284e3a35f7364704fbf3edb4adbb5407, type: 3}
   hurtColor:

@@ -15,7 +15,7 @@ MonoBehaviour:
   gunName: Weakling
   MaxAmmo: 15
   fireRate: 0.8
-  knockBack: 1
+  knockBack: 0.2
   bulletSpeed: 10
   gunSpray: 1
   firePointPOS: {x: 0.799, y: -0.243, z: 0}

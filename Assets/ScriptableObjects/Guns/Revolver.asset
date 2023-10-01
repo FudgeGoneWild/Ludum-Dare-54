@@ -15,7 +15,7 @@ MonoBehaviour:
   gunName: Revolver
   MaxAmmo: 35
   fireRate: 0.8
-  knockBack: 4
+  knockBack: 1
   bulletSpeed: 30
   gunSpray: 0.6
   firePointPOS: {x: 0.917, y: -0.208, z: 0}

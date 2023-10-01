@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class Enemy_Health_Controller : MonoBehaviour
 {
     [SerializeField] int health = 3;
     [SerializeField] int damage = 1;
+    [SerializeField] GameObject popup;
+    [SerializeField] int points;
 
     [SerializeField] ParticleSystem hurtParticles;
     [SerializeField] ParticleSystem dieParticles;
@@ -46,7 +49,10 @@ public class Enemy_Health_Controller : MonoBehaviour
         StartCoroutine(nameof(flashHurt));
         if (health <= 0)
         {
-         
+
+            GameObject currpopup = Instantiate(popup, transform.position, Quaternion.identity);
+            currpopup.transform.GetChild(0).GetComponent<TMP_Text>().SetText(points.ToString());
+            Destroy(currpopup, 5f);
             ParticleSystem currDieParticles = Instantiate(dieParticles, transform.position, Quaternion.identity);
             Destroy(currDieParticles, 1f);
             DropItem();

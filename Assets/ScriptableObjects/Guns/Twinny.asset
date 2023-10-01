@@ -15,7 +15,7 @@ MonoBehaviour:
   gunName: Shotgun
   MaxAmmo: 32
   fireRate: 0.6
-  knockBack: 7
+  knockBack: 2
   bulletSpeed: 10
   gunSpray: 2
   firePointPOS: {x: 1.103, y: -0.177, z: 0}
