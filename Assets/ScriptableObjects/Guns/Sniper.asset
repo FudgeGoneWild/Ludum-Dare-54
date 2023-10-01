@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Sniper
   m_EditorClassIdentifier: 
   gunName: Sniper
-  MaxAmmo: 8
-  fireRate: 3
+  MaxAmmo: 12
+  fireRate: 1.2
   knockBack: 10
-  bulletSpeed: 50
+  bulletSpeed: 200
   gunSpray: 0.05
   firePointPOS: {x: 2.111, y: -0.197, z: 0}
   shotgun: 0

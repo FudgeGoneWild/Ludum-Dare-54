@@ -15,10 +15,13 @@ public class Enemy_Health_Controller : MonoBehaviour
     [SerializeField] ParticleSystem dieParticles;
     [SerializeField] Color32 hurtColor;
     [SerializeField] GameObject itemDrop;
+    [SerializeField] GameObject healthpickup;
     private Rigidbody2D rb;
     private SpriteRenderer rb_sprite;
     private GameStart_Controller controller;
     private Points_Controller points_Controller;
+
+    [SerializeField] GameObject acidPool;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +54,7 @@ public class Enemy_Health_Controller : MonoBehaviour
         StartCoroutine(nameof(flashHurt));
         if (health <= 0)
         {
+            Instantiate(acidPool, transform.position, Quaternion.identity);
             points_Controller.UpdatePoints(points);
             GameObject currpopup = Instantiate(popup, transform.position, Quaternion.identity);
             currpopup.transform.GetChild(0).GetComponent<TMP_Text>().SetText(points.ToString());
@@ -68,6 +72,11 @@ public class Enemy_Health_Controller : MonoBehaviour
         if (Random.RandomRange(0,120) < 30)
         {
             GameObject currItem = Instantiate(itemDrop, transform.position, Quaternion.identity);
+        }
+
+        if (Random.RandomRange(0, 120) < 15)
+        {
+            GameObject currItem = Instantiate(healthpickup, transform.position, Quaternion.identity);
         }
     }
 

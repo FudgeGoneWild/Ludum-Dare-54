@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Revolver
   m_EditorClassIdentifier: 
   gunName: Revolver
-  MaxAmmo: 35
-  fireRate: 2
+  MaxAmmo: 45
+  fireRate: 1
   knockBack: 1
   bulletSpeed: 30
   gunSpray: 0.6

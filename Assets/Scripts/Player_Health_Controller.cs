@@ -88,10 +88,13 @@ public class Player_Health_Controller : MonoBehaviour
         healthUI.GetComponent<Slider>().maxValue = Maxhealth;
     }
 
-    public void HealthPickup(int healthboost)
+    public void HealthPickup(int heal)
     {
-        currHealth += healthboost;
+        currHealth += heal;
+        currHealth = Mathf.Clamp(currHealth, 0, Maxhealth);
+        healthUI.GetComponent<Slider>().value = currHealth;
     }
+
 
     public void TakeDamage(int damage)
     {

@@ -233,6 +233,8 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4285098495
   itemDrop: {fileID: 1684133173941810585, guid: 0416540f26ba2f342b5ebc5edb2f7a74, type: 3}
+  healthpickup: {fileID: 2031262311131619330, guid: 26591fe7e48164945b80b0f95cbab9b0, type: 3}
+  acidPool: {fileID: 7603960296778857170, guid: 9381d4b56317eaf4686c33a269d96f6f, type: 3}
 --- !u!50 &26680058456849946
 Rigidbody2D:
   serializedVersion: 4
