@@ -23,7 +23,7 @@ public class BulletScript : MonoBehaviour
 
         ParticleSystem currsparks = Instantiate(bulletSparks, transform.position, Quaternion.identity);
         Destroy(currsparks, 0.2f);
-        DestroyObject(gameObject, 0.1f);
+        DestroyObject(gameObject, 0.3f);
         
     }
 
