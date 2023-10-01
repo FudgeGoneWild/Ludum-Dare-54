@@ -68,20 +68,7 @@ public class AudioManager : MonoBehaviour
         OnLoad(); //loads slider values if ever changed
     }
 
-    private void OnLevelWasLoaded()
-    {
-        master_Slider = GameObject.FindGameObjectWithTag("MasterSlider").GetComponent<Slider>();
-        sFX_Slider = GameObject.FindGameObjectWithTag("SFXSlider").GetComponent<Slider>();
-        music_Slider = GameObject.FindGameObjectWithTag("MusicSlider").GetComponent<Slider>();
 
-        master_Slider.onValueChanged.AddListener(SetMasterVolume);
-        sFX_Slider.onValueChanged.AddListener(SetSFXVolume);
-        music_Slider.onValueChanged.AddListener(SetMusicVolume);
-
-        master_Slider.value = PlayerPrefs.GetFloat(MasterVolumeSave, 0);
-        sFX_Slider.value = PlayerPrefs.GetFloat(SFXVolumeSave, 0);
-        music_Slider.value = PlayerPrefs.GetFloat(MusicVolumeSave, 0);
-    }
 
     #region Set Volume
     void SetMasterVolume(float volume)

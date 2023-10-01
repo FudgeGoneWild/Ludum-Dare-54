@@ -3607,11 +3607,11 @@ PrefabInstance:
     - target: {fileID: 891116981916645007, guid: 465a4203522751a40a3bb51065611066, type: 3}
       propertyPath: sFX_Slider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2353595695473319916}
     - target: {fileID: 891116981916645007, guid: 465a4203522751a40a3bb51065611066, type: 3}
       propertyPath: music_Slider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7307228129677198057}
     - target: {fileID: 891116981916645007, guid: 465a4203522751a40a3bb51065611066, type: 3}
       propertyPath: voice_Slider
       value: 
@@ -3619,7 +3619,7 @@ PrefabInstance:
     - target: {fileID: 891116981916645007, guid: 465a4203522751a40a3bb51065611066, type: 3}
       propertyPath: master_Slider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 397244045330650313}
     - target: {fileID: 1796695538648486949, guid: 465a4203522751a40a3bb51065611066, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -3628,6 +3628,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: -Audio Manager-
       objectReference: {fileID: 0}
+    - target: {fileID: 6654180124311495716, guid: 465a4203522751a40a3bb51065611066, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -651582115238896955, guid: 524bf7459c1d4d142b100e4dc288120a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
