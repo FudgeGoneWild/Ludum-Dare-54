@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,12 +23,16 @@ public class Player_Health_Controller : MonoBehaviour
 
     [SerializeField] GameObject healthUI;
 
+    [SerializeField] ParticleSystem die;
     private Camera_Animation_Controller camera_Animation;
-
+    private endgame_Controller endgame_Controller;
+    private Points_Controller points_Controller;
     // Start is called before the first frame update
 
     private void Start()
     {
+        points_Controller = FindAnyObjectByType<Points_Controller>();
+        endgame_Controller = FindAnyObjectByType<endgame_Controller>();
         manager = FindAnyObjectByType<AudioManager>();
         camera_Animation = FindAnyObjectByType<Camera_Animation_Controller>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -110,8 +115,11 @@ public class Player_Health_Controller : MonoBehaviour
         healthUI.GetComponent<Slider>().value = currHealth;
         if (currHealth <= 0)
         {
-            //play end cutscene;
-            //restart game
+            camera_Animation.AddComponent<AudioListener>();
+            Instantiate(die, transform.position, Quaternion.identity);
+            endgame_Controller.EndGame(points_Controller.points);
+
+            Destroy(gameObject);
         }
     }
 }

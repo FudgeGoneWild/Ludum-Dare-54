@@ -6,7 +6,7 @@ using TMPro;
 public class Points_Controller : MonoBehaviour
 {
     [SerializeField] TMP_Text pointsText;
-    [SerializeField] int points;
+    [SerializeField] public int points;
     // Start is called before the first frame update
     void Start()
     {
