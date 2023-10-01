@@ -3620,6 +3620,10 @@ PrefabInstance:
       propertyPath: master_Slider
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1796695538648486949, guid: 465a4203522751a40a3bb51065611066, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5922735ad96b96848a4fd0672f5bb723, type: 3}
     - target: {fileID: 4486614940765983153, guid: 465a4203522751a40a3bb51065611066, type: 3}
       propertyPath: m_Name
       value: -Audio Manager-

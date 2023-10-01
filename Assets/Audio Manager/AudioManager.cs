@@ -123,6 +123,12 @@ public class AudioManager : MonoBehaviour
     }
     #endregion
 
+    public void PlaySFX(AudioClip clip)
+    {
+        Voice_Source.clip = clip;
+        Voice_Source.Play();
+    }
+
     public void SetMusic(AudioClip musicClip)
     {
         music_Source.clip = musicClip;

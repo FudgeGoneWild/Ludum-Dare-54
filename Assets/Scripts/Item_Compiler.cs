@@ -10,6 +10,8 @@ public class Item_Compiler : MonoBehaviour
     [SerializeField] Item_Data item_Data;
     [SerializeField] LayerMask player;
 
+    [SerializeField] AudioClip pickupsound;
+    private AudioManager audioManager;
     [SerializeField] GameObject popUp;
 
     [SerializeField] List<Item_Data> items; 
@@ -17,6 +19,7 @@ public class Item_Compiler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindAnyObjectByType<AudioManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         _manager = FindAnyObjectByType<PlayerUpgrade_Manager>();
 
@@ -36,7 +39,7 @@ public class Item_Compiler : MonoBehaviour
         //tolllie
         if (collision.gameObject.layer == 8)
         {
-          
+            audioManager.PlaySFX(pickupsound);
             GameObject currpopup = Instantiate(popUp, transform.position, Quaternion.identity);
             currpopup.transform.GetChild(0).GetComponent<TMP_Text>().SetText(item_Data.description);
             Destroy(currpopup, 5f);

@@ -51,6 +51,7 @@ MonoBehaviour:
   player:
     serializedVersion: 2
     m_Bits: 256
+  pickupsound: {fileID: 8300000, guid: bbacf1463f4680a468f43ccc5a3a9dce, type: 3}
   popUp: {fileID: 2515949289033439672, guid: 4e47c15808721fc4a91a6172e201bfc2, type: 3}
   items:
   - {fileID: 11400000, guid: 4816ec4676838be4ba263cfb08934d35, type: 2}
