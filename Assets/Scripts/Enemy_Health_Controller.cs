@@ -9,7 +9,9 @@ public class Enemy_Health_Controller : MonoBehaviour
     [SerializeField] int damage = 1;
 
     [SerializeField] ParticleSystem hurtParticles;
+    [SerializeField] ParticleSystem dieParticles;
     [SerializeField] Color32 hurtColor;
+    [SerializeField] GameObject itemDrop;
     private Rigidbody2D rb;
     private SpriteRenderer rb_sprite;
     // Start is called before the first frame update
@@ -42,7 +44,19 @@ public class Enemy_Health_Controller : MonoBehaviour
         StartCoroutine(nameof(flashHurt));
         if (health <= 0)
         {
+            ParticleSystem currDieParticles = Instantiate(dieParticles, transform.position, Quaternion.identity);
+            Destroy(currDieParticles, 1f);
+            DropItem();
+            FindAnyObjectByType<Camera_Animation_Controller>().HeavyShake();
             DestroyObject(gameObject);
+        }
+    }
+
+    void DropItem()
+    {
+        if (Random.RandomRange(0,120) < 30)
+        {
+            GameObject currItem = Instantiate(itemDrop, transform.position, Quaternion.identity);
         }
     }
 
