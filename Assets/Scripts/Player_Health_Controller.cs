@@ -119,7 +119,7 @@ public class Player_Health_Controller : MonoBehaviour
             Instantiate(die, transform.position, Quaternion.identity);
             endgame_Controller.EndGame(points_Controller.points);
 
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

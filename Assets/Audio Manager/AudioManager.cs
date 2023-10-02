@@ -53,9 +53,6 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        master_Slider = GameObject.FindGameObjectWithTag("MasterSlider").GetComponent<Slider>();
-        sFX_Slider = GameObject.FindGameObjectWithTag("SFXSlider").GetComponent<Slider>();
-        music_Slider = GameObject.FindGameObjectWithTag("MusicSlider").GetComponent<Slider>();
 
         master_Slider.onValueChanged.AddListener(SetMasterVolume);
         sFX_Slider.onValueChanged.AddListener(SetSFXVolume);
@@ -68,28 +65,63 @@ public class AudioManager : MonoBehaviour
         OnLoad(); //loads slider values if ever changed
     }
 
+    private void OnLevelWasLoaded()
+    {
+        if (GameObject.FindGameObjectWithTag("MasterSlider").GetComponent<Slider>() != null)
+        {
+            master_Slider = GameObject.FindGameObjectWithTag("MasterSlider").GetComponent<Slider>();
+        }
 
+        if (GameObject.FindGameObjectWithTag("SFXSlider").GetComponent<Slider>() != null)
+        {
+            sFX_Slider = GameObject.FindGameObjectWithTag("SFXSlider").GetComponent<Slider>();
+        }
+
+        if (GameObject.FindGameObjectWithTag("MusicSlider").GetComponent<Slider>() != null)
+        {
+            music_Slider = GameObject.FindGameObjectWithTag("MusicSlider").GetComponent<Slider>();
+        }
+
+
+        master_Slider.onValueChanged.AddListener(SetMasterVolume);
+        sFX_Slider.onValueChanged.AddListener(SetSFXVolume);
+        music_Slider.onValueChanged.AddListener(SetMusicVolume);
+
+        SetMasterVolume(PlayerPrefs.GetFloat(MasterVolumeSave,0));
+        SetMusicVolume(PlayerPrefs.GetFloat(MusicVolumeSave,0));
+        SetSFXVolume(PlayerPrefs.GetFloat(SFXVolumeSave,0));
+    }
 
     #region Set Volume
     void SetMasterVolume(float volume)
     {
         audioMixer.SetFloat(MasterVolume, volume);
         PlayerPrefs.SetFloat(MasterVolumeSave, master_Slider.value);
+        onSave();
     }
 
     void SetMusicVolume(float volume)
     {
         audioMixer.SetFloat(MusicVolume, volume);
         PlayerPrefs.SetFloat(SFXVolumeSave, sFX_Slider.value);
+        onSave();
     }
 
     void SetSFXVolume(float volume)
     {
         audioMixer.SetFloat(SFXVolume, volume);
         PlayerPrefs.SetFloat(MusicVolumeSave, music_Slider.value);
+        onSave();
     }
 
     #endregion
+
+    void onSave()
+    {
+        PlayerPrefs.SetFloat(MasterVolumeSave, master_Slider.value);
+        PlayerPrefs.SetFloat(SFXVolumeSave, sFX_Slider.value);
+        PlayerPrefs.SetFloat(MusicVolumeSave, music_Slider.value);
+    }
 
     #region Save and Load
     private void OnDisable()
@@ -102,13 +134,10 @@ public class AudioManager : MonoBehaviour
     private void OnLoad()
     {
         audioMixer.SetFloat(MasterVolume, PlayerPrefs.GetFloat(MasterVolumeSave, 0));
-        master_Slider.value = PlayerPrefs.GetFloat(MasterVolumeSave, 0);
 
         audioMixer.SetFloat(SFXVolume, PlayerPrefs.GetFloat(SFXVolumeSave, 0));
-        sFX_Slider.value = PlayerPrefs.GetFloat(SFXVolumeSave, 0);
 
         audioMixer.SetFloat(MusicVolume, PlayerPrefs.GetFloat(MusicVolumeSave, 0));
-        music_Slider.value = PlayerPrefs.GetFloat(MusicVolumeSave, 0);
 
 
     }
