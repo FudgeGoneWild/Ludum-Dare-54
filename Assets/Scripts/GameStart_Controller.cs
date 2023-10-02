@@ -18,7 +18,7 @@ public class GameStart_Controller : MonoBehaviour
 
     [SerializeField] GameObject waveCounter;
 
-    [SerializeField] int currWave = 1;
+    [SerializeField] public int currWave = 1;
     // Start is called before the first frame update
     IEnumerator Start()
     {

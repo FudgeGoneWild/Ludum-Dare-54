@@ -9,7 +9,7 @@ public class Enemy_Health_Controller : MonoBehaviour
     [SerializeField] AudioManager audioManager;
     [SerializeField] AudioClip deathSound;
     [SerializeField] int health = 3;
-    [SerializeField] int damage = 1;
+    [SerializeField] float damage = 1;
     [SerializeField] GameObject popup;
     [SerializeField] int points;
 
@@ -32,8 +32,14 @@ public class Enemy_Health_Controller : MonoBehaviour
         rb_sprite = rb.GetComponent<SpriteRenderer>();
         controller = FindAnyObjectByType<GameStart_Controller>();
         points_Controller = FindAnyObjectByType<Points_Controller>();
+
+        damage += controller.currWave * 0.10f;
     }
 
+    private void OnEnable()
+    {
+        
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -10,9 +10,9 @@ public class Player_Health_Controller : MonoBehaviour
     private AudioManager manager;
 
     [Header("Player Health Properties")]
-    [SerializeField] private int Maxhealth = 5;
-    [SerializeField] private int currHealth = 5;
-    [SerializeField] public int healthBoost = 0; //upgrade health
+    [SerializeField] private float Maxhealth = 5;
+    [SerializeField] private float currHealth = 5;
+    [SerializeField] public float healthBoost = 0; //upgrade health
 
     [SerializeField] Color32 flashColor;
     [SerializeField] bool invincible;
@@ -97,7 +97,7 @@ public class Player_Health_Controller : MonoBehaviour
         healthUI.GetComponent<Slider>().maxValue = Maxhealth;
     }
 
-    public void HealthPickup(int heal)
+    public void HealthPickup(float heal)
     {
         currHealth += heal;
         currHealth = Mathf.Clamp(currHealth, 0, Maxhealth);
@@ -105,7 +105,7 @@ public class Player_Health_Controller : MonoBehaviour
     }
 
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         if (!invincible) 
         {
